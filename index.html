@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords" content="mrw builders, builders in kent, staplehurst, mike williams, building, extensions, local builders, building maintenance, kent builders, staplehurst builders, roof repair; oak frame garage, timber frame garage, fibre-glass roof repair, building design">
+    <meta name="description" content="MRW Builders - Specialists in timber & oak frame buildings. Also available for new build, extensions, conversions, renovations, fibre-glass roofs, patios & drives, sewage treatment plant installation. Based in Staplehurst. Contact us on 01580 891198.">
+    <title>MRW Builders - General Builders in Staplehurst, Kent</title>
+    <link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./resources/css/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container-header">
+      <div class="logo">
+        <img id="Logo" src="./resources/images/MRW_Builders_Final.png" alt="MRW Builders Logo" />
+      </div>
+      <div class="nav">
+        <ul class="nav-buttons">
+          <li><a href="#location">Where we work</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+      </div>
+  </header>
+  <div class="container-body">
+    <main>
+        <div id="banner"></div>
+        <div class="body-container">
+          <div class="body-left">
+            <div class="body-content" id="intro">
+              <h2>Welcome to MRW Builders.</h2>
+              <h4> Exceptional craftsmanship.<br>Personal service. Built to last.</h4>
+              <p><br>
+                Based in Staplehurst, we bring over 30 years of experience to bespoke <strong>timber and oak frame buildings</strong>, <strong>conversions</strong>, <strong>extensions</strong> and other projects across Kent.
+                <br>
+                <br>
+                We take pride in traditional craftsmanship and meticulous attention to detail — creating spaces that blend timeless design with modern comfort.
+                <br>
+                <br>
+                From initial ideas to final completion, every project is handled personally, with clear communication and workmanship built to last.
+                <br>
+                <br>
+                Fully insured and guaranteed, with free, no-obligation estimates available on request.</p>
+            </div>
+            <div class="body-content" id="services">
+              <h2>What we do.</h2>
+              <h4>Specialists in timber & oak frame buildings</h4>
+              <p><br>We consider all projects but our main services include:<br></p>
+              <ul>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Extensions & Conversions</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Renovations & Refurbishments</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Bespoke Timber & Oak Frame Buildings</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Fibre-glass Roofing</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Patios, Driveways & Landscaping</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Swimming Pools & Ponds</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>Sewage Treatment Plant Installation</li>
+                <li><i class="fa-sharp fa-solid fa-hammer"></i>General Carpentry & Joinery</li>
+              </ul>
+            </div> 
+          </div>
+          <div class="body-right">
+            <div class="body-content" id="contact">
+              <h2>Get in touch.</h2>
+              <p>Please reach out if you would like a to discuss a project or get a free, no obligation quotation for any building work.</p>
+                <h4>Phone:</h4>
+                <p><a href="tel:07885643017">07885 643017</a> or <a href="tel:01580891198">01580 891198</a></p>
+                <h4>Email:</h4>
+                <p><a href="mailto:info@mrwbuilders.co.uk">info@mrwbuilders.co.uk</a></p>
+            </div>
+            <div class="body-content" id="location">
+              <section id="map">
+                <h2>Where we work.</h2>
+                <h4>Based in<br>Staplehurst, Kent</h4>
+                <p><br>The map below shows our <strong>normal</strong> operating area. We are happy to discuss projects outside of this area.</p>
+                <div id="service-map"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+    </main>
+    <footer>
+      <a href="https://wa.me/447545969255" class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
+        <img src="./resources/images/whatsapp-icon.png" alt="WhatsApp" />
+      </a>
+        <small>Michael Richard Williams t/as MRW Builders. VAT registered.<br>
+        &copy; <span id="year"></span> MRW Builders<br></small>
+        <small class="hidden">MRW Builders are able to carry out your roof repairs including fibre-glass covering,
+           repair and replace broken or missing tiles, storm damage, insurance repairs, fencing, extension, conversion,
+            patio, decking, drives, swimming pool, pond construction, septic tank installation, bio-disc installation,
+             kitchen installation, bathroom installation, ceiling repair, plastering, decking, general carpentry, full drainage works,
+              foundations, walls etc. We're able to help you with all aspects of home improvement including finishing off incomplete DIY projects!
+               We specialise in bespoke timber and oak frame buildings including garages and outbuildings. We are also able to help you to comply
+                with the new Environment Agency sewage discharge to surface water regulations that come into force from 1st Jan2020
+                  - we can supply and install a small sewage treatment plant including Klargester and Biodiscs as they are sometimes known</small>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./resources/scripts.js"></script>
+  </div>
+</body>
+</html>

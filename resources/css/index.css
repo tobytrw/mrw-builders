@@ -1,0 +1,340 @@
+/* color scheme
+
+Primary color: #00938f
+Secondary color: #152874
+Red highlight: #d9201b
+
+*/
+
+
+/* Replace browser default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html{
+    font-size: 20px;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.2;
+}
+
+h1 {
+    color: #00938f;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem;
+    letter-spacing: 0.2rem;
+}
+
+h2 {
+    color: #00938f;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-size: 3.5rem;
+}
+
+h4 {
+    color: #d9201b;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 1.8rem;
+}
+h3 {
+    color: #d9201b;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    color: #152874;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+li {
+    display: inline-block;
+}
+/* Header styles start here */
+
+.header {    
+    background-color: #fff;
+    border-bottom: 3px solid #00938f;
+    width: 100%;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+:target {
+  scroll-margin-top: 100px; /* equal to your header height */
+}
+
+.container-header {
+    max-width: 1440px;
+    min-width: 360px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; /* ✅ spreads logo and nav buttons */
+}
+
+.logo {
+    flex: 1 0 100%;
+    text-align: center; /* ✅ allows logo to take up available space */
+}
+
+.nav {
+    flex: 1 0 100%; /* ✅ allows nav to take up available space */
+    text-align: center; /* ✅ aligns nav to the center */
+    padding: 15px 0;
+}
+
+.nav-buttons {
+    display: flex;          /* ✅ layout list items horizontally */
+    flex-wrap: wrap;
+    gap: 25px;              /* ✅ spacing between buttons */
+    list-style: none;
+    justify-content: center; /* ✅ centers the nav buttons */
+    padding: 0;
+    /* Removed position absolute + transform */
+    /* margin-right: 15px; <- not needed with space-between */
+}
+
+/* Responsive adjustments */
+    @media (min-width: 768px) {
+  .logo {
+    flex: initial;
+    text-align: left;
+  }
+
+  .nav {
+    flex: initial;
+    text-align: left;
+  }
+
+  .container-header {
+    flex-wrap: nowrap;
+  }
+
+  #logo {
+    margin: auto;
+  }
+}
+
+.nav-buttons li {
+  text-align: center;
+  max-height: 48px;
+}
+
+.nav-buttons a {
+    display: inline-block;
+    max-height: 48px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 2px solid #00938f;
+    color: #00938f;
+    border-radius: 1px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+.nav-buttons a:hover {
+    background-color: #00938f;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#Logo {
+    height: 75px;
+    margin-left: 0;
+}
+
+
+
+/* Body styles start here */
+
+.container-body {
+    max-width: 1440px;
+    min-width: 360px;
+    margin: 0 auto;
+    padding: 15px 15px;
+}
+
+#banner {
+    aspect-ratio: 4 / 3;
+    margin-top: 100px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+    background-blend-mode: lighten;
+    width: 100%;
+}
+
+/* responsive content */
+
+      @media (max-width: 768px) {
+  #banner {
+    margin-top: 185px;
+}
+  :target {
+  scroll-margin-top: 185px; /* equal to your header height */
+}
+
+
+}
+
+/* responsive content*/
+
+      @media (max-width: 388px) {
+  #banner {
+    margin-top: 250px;
+}
+:target {
+  scroll-margin-top: 80px; /* equal to your header height */
+}
+}
+
+
+
+/* Main body styles */
+.body-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.body-left {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-right {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1;
+    min-width: 300px;
+}
+
+.body-content {
+    padding-top: 20px;
+}
+
+#location  {
+    background-color: #152874;
+    padding: 20px 20px 0 20px;
+}
+
+#services ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#services li {
+    font-family: "Bebas Neue", sans-serif;
+    display: inline-block;
+    padding: 1em 1em 1em 0;
+    color: #152874;
+}
+
+#services i {
+  color: #00938f;
+  margin-right: 0.5em;
+}
+
+    
+
+#contact {
+    background-color: #00938f;
+    padding: 20px 20px 0 20px;
+}
+
+.body-right h2, .body-right p, .body-right h4  {
+    color: #fff;
+}
+
+
+/* Leaflet Map Styles */
+#service-map {
+  height: 400px;
+  width: 100%;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+    /* Responsive adjustments */
+@media (max-width: 600px) {
+    #service-map {
+        height: 300px;
+    }
+}
+
+/* Footer styles start here */
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+/* SEO hidden text */
+.hidden {
+    display: none;
+}
+/* WhatsApp button styles */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: vibrate 1.5s infinite;  /* vibration animation */
+}
+
+.whatsapp-button img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    display: flex; /* Show only on mobile */
+  }
+}
+@keyframes vibrate {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  20%  { transform: translate(-2px, 2px) rotate(-1deg); }
+  40%  { transform: translate(2px, -2px) rotate(1deg); }
+  60%  { transform: translate(-2px, 2px) rotate(-1deg); }
+  80%  { transform: translate(2px, -2px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
