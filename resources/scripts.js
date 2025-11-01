@@ -37,31 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map).bindPopup('Service Area - MRW Builders');
 
 // === HERO IMAGE ROTATOR ===
-  const slides = document.querySelectorAll('.banner .slide');
+const slides = document.querySelectorAll('.banner .slide');
 let current = 0;
 
 function loadImage(img) {
-  if (img.dataset.src && !img.src) {
-    img.src = img.dataset.src;
-  }
+  return new Promise(resolve => {
+    if (img.src) return resolve(); // already loaded
+    const tmp = new Image();
+    tmp.src = img.dataset.src;
+    tmp.onload = () => {
+      img.src = tmp.src;
+      resolve();
+    };
+  });
 }
 
-function nextSlide() {
+async function nextSlide() {
+  const next = (current + 1) % slides.length;
+  const nextSlide = slides[next];
+
+  // Wait for the next image to fully load before transition
+  await loadImage(nextSlide);
+
   slides[current].classList.remove('visible');
+  nextSlide.classList.add('visible');
 
-  // increment & loop back when we reach the end
-  current = (current + 1) % slides.length;
-
-  // preload next image before showing
-  loadImage(slides[current]);
-
-  slides[current].classList.add('visible');
+  current = next;
 }
 
-// preload the second image right away for a smooth start
+// preload the second image immediately
 loadImage(slides[1]);
 
-// cycle every 5 seconds
+// then start looping every 5 seconds
 setInterval(nextSlide, 5000);
+// === END HERO IMAGE ROTATOR ===
 // End of DOMContentLoaded - add new code above this line
 });
