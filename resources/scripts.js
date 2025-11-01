@@ -36,28 +36,32 @@ document.addEventListener('DOMContentLoaded', () => {
         weight: 2
     }).addTo(map).bindPopup('Service Area - MRW Builders');
 
-// === HERO BACKGROUND IMAGE ROTATOR ===
-  const banner = document.getElementById('banner');
+// === HERO IMAGE ROTATOR ===
+  const slides = document.querySelectorAll('.banner .slide');
+let current = 0;
 
-  if (banner) {
-    const images = [
-      'resources/images/hero_1.jpg',
-      'resources/images/hero_2.jpeg',
-      'resources/images/hero_3.jpg',
-      'resources/images/hero_4.jpg'
-    ];
-
-    let index = 0;
-    const changeInterval = 5000; // 5 seconds
-
-    // Set initial image
-    banner.style.backgroundImage = `url(${images[index]})`;
-
-    // Start image rotation
-    setInterval(() => {
-      index = (index + 1) % images.length;
-      banner.style.backgroundImage = `url(${images[index]})`;
-    }, changeInterval);
+function loadImage(img) {
+  if (img.dataset.src && !img.src) {
+    img.src = img.dataset.src;
   }
+}
+
+function nextSlide() {
+  slides[current].classList.remove('visible');
+
+  // increment & loop back when we reach the end
+  current = (current + 1) % slides.length;
+
+  // preload next image before showing
+  loadImage(slides[current]);
+
+  slides[current].classList.add('visible');
+}
+
+// preload the second image right away for a smooth start
+loadImage(slides[1]);
+
+// cycle every 5 seconds
+setInterval(nextSlide, 5000);
 // End of DOMContentLoaded - add new code above this line
 });

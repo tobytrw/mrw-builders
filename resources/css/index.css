@@ -178,22 +178,41 @@ li {
     padding: 15px 15px;
 }
 
-#banner {
+.banner {
     aspect-ratio: 4 / 3;
     margin-top: 100px;
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 1s ease-in-out;
-    background-blend-mode: lighten;
+    overflow: hidden;
     width: 100%;
+}
+
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or contain, depending on desired behavior */
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.visible {
+  opacity: 1;
 }
 
 /* responsive content */
 
       @media (max-width: 768px) {
-  #banner {
+  .banner {
     margin-top: 185px;
 }
   :target {
@@ -206,7 +225,7 @@ li {
 /* responsive content*/
 
       @media (max-width: 388px) {
-  #banner {
+  .banner {
     margin-top: 250px;
 }
 :target {
