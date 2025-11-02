@@ -7,34 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Google Maps config
     const map = L.map('service-map', {
         center: [51.163, 0.558],
-        zoom: 11,
+        zoom: 9,
         zoomControl: true,
         scrollWheelZoom: false,
         doubleClickZoom: true,
         dragging: true,
-        touchZoom: false
+        touchZoom: true
         });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &copy; CartoDB',
-        subdomains: 'abcd',
-        maxZoom: 18
-    }).addTo(map);
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-    const serviceArea = [
-        [51.173, 0.500],
-        [51.197, 0.548],
-        [51.166, 0.600],
-        [51.132, 0.570],
-        [51.130, 0.512],
-        [51.152, 0.495]
-        ];
-    L.polygon(serviceArea, { 
-        color: '#00938f',
-        fillColor: '#00938f',
-        fillOpacity: 0.3,
-        weight: 2
-    }).addTo(map).bindPopup('Service Area - MRW Builders');
+
+
+    L.circle([51.163, 0.558], {
+      color: '#00938f',
+      fillColor: '#00938f',
+      fillOpacity: 0.3,
+      weight: 2,
+      radius: 20000
+}).addTo(map);
 
 // === HERO IMAGE ROTATOR ===
 const slides = document.querySelectorAll('.banner .slide');

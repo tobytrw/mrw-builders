@@ -155,10 +155,17 @@ li {
     font-weight: normal;
 }
 
-.nav-buttons a:hover {
-    background-color: #00938f;
-    color: #fff;
-    transition: background-color 0.3s, color 0.3s;
+@media (hover: hover) and (pointer: fine) {
+    .nav-buttons a:hover {
+        background-color: #00938f;
+        color: #fff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-buttons a:focus {
+        background-color: initial;
+        color: initial;
+    }
 }
 
 
@@ -322,38 +329,4 @@ footer {
 /* SEO hidden text */
 .hidden {
     display: none;
-}
-/* WhatsApp button styles */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10000;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: none; /* Hidden by default */
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  animation: vibrate 1.5s infinite;  /* vibration animation */
-}
-
-.whatsapp-button img {
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .whatsapp-button {
-    display: flex; /* Show only on mobile */
-  }
-}
-@keyframes vibrate {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  20%  { transform: translate(-2px, 2px) rotate(-1deg); }
-  40%  { transform: translate(2px, -2px) rotate(1deg); }
-  60%  { transform: translate(-2px, 2px) rotate(-1deg); }
-  80%  { transform: translate(2px, -2px) rotate(1deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
 }
