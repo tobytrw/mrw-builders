@@ -58,7 +58,12 @@ p {
     font-family: "Montserrat", sans-serif;
     color: #152874;
     font-size: 1rem;
-    margin-bottom: 15px;
+}
+
+small {
+  font-family: "Montserrat", sans-serif;
+    color: #152874;
+    font-size: 0.8rem;
 }
 
 li {
@@ -322,8 +327,8 @@ li {
 footer {
     text-align: center;
     font-size: 0.8em;
-    font-family: sans-serif;
-    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    margin: 20px 0;
 }
 
 /* SEO hidden text */
