@@ -293,6 +293,7 @@ a[href^="tel"] {
     display: flex;
     flex-direction: column-reverse;
     flex: 1;
+    margin: 1rem 0;
 }
 
 .body-content {
@@ -303,6 +304,7 @@ a[href^="tel"] {
     background-color: #152874;
     padding: 1rem;
     height: 100%;
+    border-radius: 1rem;
 }
 
 #map {
@@ -340,6 +342,7 @@ a[href^="tel"] {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    border-radius: 1rem;
 }
 
 #contact i {
@@ -366,10 +369,12 @@ a[href^="tel"] {
 #phone h2 {
     font-size: 2rem;
     letter-spacing: 0.25rem;
+    margin: 1rem 0;
 }
 
 #phone h4 {
     font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
 .body-right h2, .body-right p, .body-right h4, #contact h2, #contact p, #contact h4  {
