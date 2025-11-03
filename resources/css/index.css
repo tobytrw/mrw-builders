@@ -80,21 +80,66 @@ li {
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 :target {
-  scroll-margin-top: 100px; /* equal to your header height */
+  scroll-margin-top: 140px; /* equal to your header height */
 }
 
-.container-header {
+.links-container {
+    background-color: #00938f;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desktop-links {
+    width: 100%;
+    max-width: 1440px;
+    min-width: 360px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.3em 15px;
+}
+
+.mobile-links {
+    display: none;
+}
+
+.mobile-links i, .desktop-links i {
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+.mobile-links li, .desktop-links li, .mobile-links a, .desktop-links a {
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    flex: 1;
+}
+
+#links-inner {
+    flex: 1 1 auto;
+}
+
+#links-outer {
+    flex: 1 2 auto;
+}
+
+.logo-container {
     max-width: 1440px;
     min-width: 360px;
     margin: 0 auto;
     padding: 10px 15px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between; /* ✅ spreads logo and nav buttons */
 }
 
 .logo {
@@ -102,63 +147,25 @@ li {
     text-align: center; /* ✅ allows logo to take up available space */
 }
 
-.nav {
-    flex: 1 0 100%; /* ✅ allows nav to take up available space */
-    text-align: center; /* ✅ aligns nav to the center */
-    padding: 15px 0;
+/* Switch links to mobile version on small screen */
+    @media (max-width: 980px) {
+    .mobile-links {
+        width: 100%;
+        max-width: 1440px;
+        min-width: 360px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.3em 15px;
+    }
+
+    .desktop-links {
+        display: none;
+    }
 }
 
-.nav-buttons {
-    display: flex;          /* ✅ layout list items horizontally */
-    flex-wrap: wrap;
-    gap: 25px;              /* ✅ spacing between buttons */
-    list-style: none;
-    justify-content: center; /* ✅ centers the nav buttons */
-    padding: 0;
-    /* Removed position absolute + transform */
-    /* margin-right: 15px; <- not needed with space-between */
-}
-
-/* Responsive adjustments */
-    @media (min-width: 768px) {
-  .logo {
-    flex: initial;
-    text-align: left;
-  }
-
-  .nav {
-    flex: initial;
-    text-align: left;
-  }
-
-  .container-header {
-    flex-wrap: nowrap;
-  }
-
-  #logo {
-    margin: auto;
-  }
-}
-
-.nav-buttons li {
-  text-align: center;
-  max-height: 48px;
-}
-
-.nav-buttons a {
-    display: inline-block;
-    max-height: 48px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    padding: 10px 15px;
-    background-color: #fff;
-    border: 2px solid #00938f;
-    color: #00938f;
-    border-radius: 1px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: normal;
-}
+/* NAV BUTTONS GONE _ CAN REMOVE WHEN FINISHED 
 
 @media (hover: hover) and (pointer: fine) {
     .nav-buttons a:hover {
@@ -171,7 +178,7 @@ li {
         background-color: initial;
         color: initial;
     }
-}
+} */
 
 
 #Logo {
@@ -180,19 +187,19 @@ li {
 }
 
 
-
 /* Body styles start here */
 
 .container-body {
     max-width: 1440px;
     min-width: 360px;
+    margin-top: 140px;
     margin: 0 auto;
     padding: 15px 15px;
 }
 
 .banner {
     aspect-ratio: 4 / 3;
-    margin-top: 100px;
+    margin-top: 140px;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -220,31 +227,6 @@ li {
 .slide.visible {
   opacity: 1;
 }
-
-/* responsive content */
-
-      @media (max-width: 768px) {
-  .banner {
-    margin-top: 185px;
-}
-  :target {
-  scroll-margin-top: 185px; /* equal to your header height */
-}
-
-
-}
-
-/* responsive content*/
-
-      @media (max-width: 388px) {
-  .banner {
-    margin-top: 250px;
-}
-:target {
-  scroll-margin-top: 80px; /* equal to your header height */
-}
-}
-
 
 
 /* Main body styles */
@@ -296,8 +278,6 @@ li {
   color: #00938f;
   margin-right: 0.5em;
 }
-
-    
 
 #contact {
     background-color: #00938f;
