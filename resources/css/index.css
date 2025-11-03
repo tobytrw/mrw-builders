@@ -69,6 +69,45 @@ small {
 li {
     display: inline-block;
 }
+
+label {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    border-style: none;
+    padding: 0.2rem 0;
+}
+
+input, textarea {
+    background-color: #fff;
+    color: #00938f;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    border: 1px;
+    border-radius: 0.1rem;
+    padding: 0.2rem 0.5rem;
+    outline: #00938f;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    field-sizing: content;
+    min-height: 4rem;
+}
+
+button {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    color: #fff;
+    border: 0;
+    background-color: #d9201b;
+    margin-top: 0.75rem;
+    letter-spacing: 0.1rem;
+}
+
+
 /* Header styles start here */
 
 .header {    
@@ -235,7 +274,7 @@ li {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 0 20px;
 }
 
 .body-left {
@@ -249,16 +288,27 @@ li {
     display: flex;
     flex-direction: column-reverse;
     flex: 1;
-    min-width: 300px;
+    height: -webkit-fill-available;
 }
 
 .body-content {
-    padding-top: 20px;
+    padding: 1rem 0;
 }
 
 #location  {
     background-color: #152874;
-    padding: 20px 20px 0 20px;
+    padding: 1rem;
+    height: 100%;
+}
+
+#map {
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+}
+
+#map h2, #map h4, #map p {
+    flex: 0;
 }
 
 #services ul {
@@ -270,28 +320,77 @@ li {
 #services li {
     font-family: "Bebas Neue", sans-serif;
     display: inline-block;
-    padding: 1em 1em 1em 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
     color: #152874;
 }
 
 #services i {
   color: #00938f;
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 
 #contact {
     background-color: #00938f;
-    padding: 20px 20px 0 20px;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.body-right h2, .body-right p, .body-right h4  {
+#contact i {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contact-intro {
+    display: block;
+    width: 100%;
+}
+
+
+#phone {
+    text-align: center;
+    flex: 1 0;
+}
+
+#form-container {
+    flex: 1 0;
+}
+
+#phone h2 {
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+}
+
+#phone h4 {
+    font-size: 1.2rem;
+}
+
+.body-right h2, .body-right p, .body-right h4, #contact h2, #contact p, #contact h4  {
     color: #fff;
 }
 
+.form-feature {
+    text-align: left;
+    width: 100%;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form input {
+    max-width: 400px;
+}
 
 /* Leaflet Map Styles */
 #service-map {
-  height: 400px;
+  min-height: 400px;
+  flex: 1;
   width: 100%;
   border-radius: 6px;
   margin: 20px 0;
@@ -300,6 +399,18 @@ li {
 @media (max-width: 600px) {
     #service-map {
         height: 300px;
+    }
+
+    #contact {
+        display: block;
+    }
+
+    .form-feature {
+        text-align: center;
+    }
+
+    #form input {
+        max-width: none;
     }
 }
 
