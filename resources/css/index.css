@@ -308,7 +308,7 @@ a[href^="tel"] {
 #map {
     display: flex;
     flex-direction: column;
-    height: -webkit-fill-available;
+    height: 100%;
 }
 
 #map h2, #map h4, #map p {
