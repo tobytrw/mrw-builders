@@ -109,7 +109,7 @@ button {
 
 /* Target auto-detected phone numbers on iOS (Safari) */
 a[href^="tel"] {
-  color: #fff; /* your custom color */
+  color: #d9201b; /* your custom color */
   text-decoration: none;
 }
 
@@ -342,45 +342,49 @@ a[href^="tel"] {
     padding: 1rem;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    gap: 2rem;
     border-radius: 1rem;
 }
 
-#contact i {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+#contact-left {
+    flex: 2;
 }
 
-#contact-intro {
-    display: block;
-    width: 100%;
-}
-
-
-#phone {
+#contact-right {
     text-align: center;
-    flex: 1 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    flex: 1;
+    padding: 1rem 0;
 }
 
 #form-container {
     flex: 1 0;
 }
 
-#phone h2 {
-    font-size: 2rem;
-    letter-spacing: 0.25rem;
-    margin: 1rem 0;
-}
-
-#phone h4 {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-}
-
-.body-right h2, .body-right p, .body-right h4, #contact h2, #contact p, #contact h4  {
+.body-right h2, .body-right p, .body-right h4  {
     color: #fff;
+}
+
+#contact h2, #contact p, #contact h4  {
+    color: #fff;
+}
+
+#contact-right p, #contact-right h2, #contact-right h4  {
+    color: #152874;
+    padding: 0 1rem;
+}
+
+#contact-right h3  {
+    color: #d9201b;
+    padding: 0.5rem 1rem;
+    font-size: 3rem;
+}
+
+#contact-right i {
+    color: #152874;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .form-feature {
