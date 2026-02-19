@@ -105,7 +105,15 @@ button {
     background-color: #d9201b;
     margin-top: 0.75rem;
     letter-spacing: 0.1rem;
+    transition: all 0.2s ease;
 }
+
+  button:hover {
+    background-color: #fff;
+    color: #d9201b;
+    outline: #d9201b solid 2px;
+  }
+
 
 /* Target auto-detected phone numbers on iOS (Safari) */
 a[href^="tel"] {
@@ -236,20 +244,26 @@ a[href^="tel"] {
 .container-body {
     max-width: 1440px;
     min-width: 360px;
-    margin-top: 140px;
     margin: 0 auto;
+    margin-top: 140px;
     padding: 15px 15px;
 }
 
 .banner {
     aspect-ratio: 4 / 3;
-    margin-top: 140px;
     position: relative;
     overflow: hidden;
     width: 100%;
 }
 
-.banner img {
+.banner-oak {
+    aspect-ratio: 20 / 7;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.banner img, .banner-oak img {
   position: absolute;
   top: 0;
   left: 0;
@@ -258,6 +272,8 @@ a[href^="tel"] {
   object-fit: cover;
   border-radius: 1rem;
 }
+
+
 
 .slide {
   position: absolute;
@@ -283,6 +299,14 @@ a[href^="tel"] {
     gap: 0 20px;
 }
 
+.body-container-sewage {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 20px;
+}
+
 .body-left {
     flex: 2;
     min-width: 300px;
@@ -293,13 +317,18 @@ a[href^="tel"] {
 
 .body-right {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     flex: 1;
     margin: 1rem 0;
 }
 
 .body-content {
     padding: 1rem 0;
+}
+
+.body-content-sewage {
+    flex: 1;
+    min-width: 400px;
 }
 
 #location  {
@@ -332,10 +361,26 @@ a[href^="tel"] {
     color: #152874;
 }
 
+#services a {
+    color: #152874;
+    text-decoration: none;
+}
+
+#services a:visited {
+        color: #152874;
+    }
+
+#services a:hover {
+        color: #00938f;
+        transition: color 0.3s;
+    }
+
 #services i {
   color: #00938f;
   margin-right: 0.5rem;
 }
+
+
 
 #contact {
     background-color: #00938f;
@@ -402,6 +447,52 @@ a[href^="tel"] {
     max-width: 400px;
 }
 
+/* Enquire/Back to home alignment */
+  .mini-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px;
+    align-items: center;
+  }
+
+  .enquire-button, .home-button {
+    display: inline-block;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    margin-top: 0.75rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border: 0;
+    min-width: 250px;
+  }
+
+    .enquire-button {
+        color: #fff;
+        background-color: #d9201b;
+        outline: #d9201b solid 2px;
+    }
+
+    .enquire-button:hover {
+        background-color: #fff;
+        color: #d9201b;
+        outline: #d9201b solid 2px;
+    }
+
+    .home-button {
+        color: #d9201b;
+        outline: #d9201b solid 2px;
+        background-color: #fff;
+    }
+
+    .home-button:hover {
+        background-color: #d9201b;
+        color: #fff;
+        outline: #d9201b solid 2px;
+    }
+
 /* Leaflet Map Styles */
 #service-map {
   min-height: 400px;
@@ -410,7 +501,31 @@ a[href^="tel"] {
   border-radius: 6px;
   margin: 20px 0;
 }
-    /* Responsive adjustments */
+
+/* video container styles */
+
+.video-container {
+    flex: 0 0 400px;
+    position: relative; /* Essential for positioning content and video inside */
+    aspect-ratio: 10 / 16;
+    overflow: hidden;   /* Hides any overflow of the video outside the div */
+    background: #000;   /* Fallback background color if video fails to load */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.body-right #install-video {
+    flex-direction: column;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
     #service-map {
         height: 300px;
